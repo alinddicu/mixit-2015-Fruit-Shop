@@ -156,6 +156,7 @@
         }
 
         [TestMethod]
+        [Ignore]
         /*         
          * Support de la localisation par article 
          * Le support du CSV est pour la prochaine itération 
@@ -195,6 +196,38 @@
             caisse.Enregistrer(Fruitfactory.Create("Cerises"));
 
             Check.That(caisse.GetPrix()).IsEqualTo(580);
+        }
+
+        [TestMethod]
+        /*         
+         * On a déployé du nouveau Hardware, faut redeployer asap. 
+         * Même deadline 
+         * 
+         * 3 lots de "Apples" valent 2 € 
+         * 2 lots de "Mele" valent 1 € 
+         * 
+         * > Cerises, Apples 
+         * -> 175 
+         * > Cerises 
+         * -> 230 
+         * > Apples, Pommes, Bananes 
+         * -> 580 
+         * > Apples, Pommes 
+         * -> 680 
+         * > Mele 
+         * -> 780 
+         * > Pommes 
+         * -> 880
+         */
+        public void GivenIteration6BisWhenGetPrixThenReturn680()
+        {
+            var caisse = new Caisse();
+
+            caisse.Enregistrer(
+                Fruitfactory.Create(
+                "Mele, Apples, Apples, Pommes, Apples, Mele, Cerises, Cerises, Bananes"));
+            
+            Check.That(caisse.GetPrix()).IsEqualTo(680);
         }
     }
 }
