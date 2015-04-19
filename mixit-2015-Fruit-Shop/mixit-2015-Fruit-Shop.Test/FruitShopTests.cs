@@ -31,6 +31,7 @@
         }
 
         [TestMethod]
+        [Ignore]
         /*         
          * Pour 2 lots de cerises achetés on applique 20 centimes de réduction
          * 
@@ -83,6 +84,41 @@
             caisse.Enregistrer(Fruitfactory.Create("Pommes"));
 
             Check.That(caisse.GetPrix()).IsEqualTo(425);
+        }
+
+        [TestMethod]
+        /*         
+         * La réduction pour les cerises passe à 30 centimes. 
+         * Un lot de bananes acheté, le second est offert. 
+         * 
+         * > Cerises 
+         * -> 75 
+         * > Pommes 
+         * -> 175 
+         * > Cerises 
+         * -> 220 
+         * > Bananes 
+         * -> 370 
+         * > Pommes 
+         * -> 470 
+         * > Bananes 
+         * -> 470 
+         * > Cerises 
+         * -> 545
+         */
+        public void GivenIteration4WhenGetPrixThenReturn545()
+        {
+            var caisse = new Caisse();
+
+            caisse.Enregistrer(Fruitfactory.Create("Cerises"));
+            caisse.Enregistrer(Fruitfactory.Create("Pommes"));
+            caisse.Enregistrer(Fruitfactory.Create("Cerises"));
+            caisse.Enregistrer(Fruitfactory.Create("Bananes"));
+            caisse.Enregistrer(Fruitfactory.Create("Pommes"));
+            caisse.Enregistrer(Fruitfactory.Create("Bananes"));
+            caisse.Enregistrer(Fruitfactory.Create("Cerises"));
+
+            Check.That(caisse.GetPrix()).IsEqualTo(545);
         }
     }
 }

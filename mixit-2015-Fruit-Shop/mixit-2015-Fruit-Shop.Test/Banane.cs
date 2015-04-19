@@ -12,9 +12,12 @@
             return PrixUnitaire;
         }
 
-        public static int CalculatePrixPanier(IEnumerable<IFruit> fruits)
+        public static int CalculatePrixPanier(ICollection<IFruit> fruits)
         {
-            return fruits.OfType<Banane>().Sum(f => f.GetPrixUnitaire());
+            var prixEntier = fruits.OfType<Banane>().Sum(f => f.GetPrixUnitaire());
+            var reduction = fruits.Count(f => f is Banane) / 2 * PrixUnitaire;
+
+            return prixEntier - reduction;
         }
     }
 }

@@ -6,7 +6,7 @@
     public class Cerise : IFruit
     {
         private const int PrixUnitaire = 75;
-        private const int MontantReductionPar2 = 20;
+        private const int MontantReductionPar2 = 30;
 
         public int GetPrixUnitaire()
         {
