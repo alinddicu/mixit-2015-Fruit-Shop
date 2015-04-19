@@ -66,6 +66,7 @@
         }
 
         [TestMethod]
+        [Ignore]
         /*         
          * Les articles doivent être séparés par des virgules 
          * Même prix & réductions que pour l’itération
@@ -87,6 +88,7 @@
         }
 
         [TestMethod]
+        [Ignore]
         /*         
          * La réduction pour les cerises passe à 30 centimes. 
          * Un lot de bananes acheté, le second est offert. 
@@ -119,6 +121,39 @@
             caisse.Enregistrer(Fruitfactory.Create("Cerises"));
 
             Check.That(caisse.GetPrix()).IsEqualTo(545);
+        }
+
+        [TestMethod]
+        /*         
+         * Support de la localisation 
+         * La réduction pour les cerises repassent à 0,20 € 
+         * On doit supporter les mots "Apples" et "Mele" pour "Pommes" 
+         * 
+         * > Cerises 
+         * -> 75 
+         * > Apples 
+         * -> 175 
+         * > Cerises 
+         * -> 230 
+         * > Bananes 
+         * -> 380 
+         * > Pommes 
+         * -> 480 
+         * > Mele 
+         * -> 580
+         */
+        public void GivenIteration5WhenGetPrixThenReturn545()
+        {
+            var caisse = new Caisse();
+
+            caisse.Enregistrer(Fruitfactory.Create("Cerises"));
+            caisse.Enregistrer(Fruitfactory.Create("Apples"));
+            caisse.Enregistrer(Fruitfactory.Create("Cerises"));
+            caisse.Enregistrer(Fruitfactory.Create("Bananes"));
+            caisse.Enregistrer(Fruitfactory.Create("Pommes"));
+            caisse.Enregistrer(Fruitfactory.Create("Mele"));
+
+            Check.That(caisse.GetPrix()).IsEqualTo(580);
         }
     }
 }

@@ -16,6 +16,8 @@
                         yield return new Cerise();
                         break;
                     case "Pommes":
+                    case "Apples":
+                    case "Mele":
                         yield return new Pomme();
                         break;
                     case "Bananes":
