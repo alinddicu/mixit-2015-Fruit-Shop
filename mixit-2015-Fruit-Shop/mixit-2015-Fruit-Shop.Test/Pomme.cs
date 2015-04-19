@@ -5,7 +5,7 @@
 
     public class Pomme : IFruit
     {
-        private const int PrixUnitaire = 100;
+        public const int PrixUnitaire = 100;
 
         public int GetPrixUnitaire()
         {

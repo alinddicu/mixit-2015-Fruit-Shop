@@ -14,10 +14,12 @@
         public int GetPrix()
         {
             var prixPommes = Pomme.CalculatePrixPanier(_fruits);
+            var prixApples = Apples.CalculatePrixPanier(_fruits);
+            var prixMele = Mele.CalculatePrixPanier(_fruits);
             var prixCerises = Cerise.CalculatePrixPanier(_fruits);
             var prixBananes = Banane.CalculatePrixPanier(_fruits);
 
-            return prixPommes + prixCerises + prixBananes;
+            return prixPommes + prixApples + prixMele + prixCerises + prixBananes;
         }
     }
 }

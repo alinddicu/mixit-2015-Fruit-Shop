@@ -5,7 +5,7 @@
 
     public class FruitFactory
     {
-        public IEnumerable< IFruit> Create(string input)
+        public IEnumerable<IFruit> Create(string input)
         {
             var fruits = input.Split(',');
             foreach (var fruit in fruits)
@@ -16,9 +16,13 @@
                         yield return new Cerise();
                         break;
                     case "Pommes":
-                    case "Apples":
-                    case "Mele":
                         yield return new Pomme();
+                        break;
+                    case "Apples":
+                        yield return new Apples();
+                        break;
+                    case "Mele":
+                        yield return new Mele();
                         break;
                     case "Bananes":
                         yield return new Banane();
