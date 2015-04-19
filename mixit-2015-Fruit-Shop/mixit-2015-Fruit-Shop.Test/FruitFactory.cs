@@ -1,22 +1,30 @@
 ﻿namespace Mixit2015FruitShop.Test
 {
+    using System.Collections.Generic;
     using System.IO;
 
     public class FruitFactory
     {
-        public IFruit Create(string input)
+        public IEnumerable< IFruit> Create(string input)
         {
-            switch (input)
+            var fruits = input.Split(',');
+            foreach (var fruit in fruits)
             {
-                case "Cerises":
-                    return new Cerise();
-                case "Pommes":
-                    return new Pomme();
-                case "Bananes":
-                    return new Banane();
+                switch (fruit.Trim())
+                {
+                    case "Cerises":
+                        yield return new Cerise();
+                        break;
+                    case "Pommes":
+                        yield return new Pomme();
+                        break;
+                    case "Bananes":
+                        yield return new Banane();
+                        break;
+                    default:
+                        throw new InvalidDataException("Fruit non connu" + input);
+                }
             }
-
-            throw new InvalidDataException("Fruit non connu" + input);
         }
     }
 }

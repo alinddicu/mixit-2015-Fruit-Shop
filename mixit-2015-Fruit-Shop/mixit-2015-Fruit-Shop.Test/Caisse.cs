@@ -1,15 +1,14 @@
 ﻿namespace Mixit2015FruitShop.Test
 {
     using System.Collections.Generic;
-    using System.Linq;
 
     public class Caisse
     {
-        private readonly IList<IFruit> _fruits = new List<IFruit>();
-
-        public void Enregistrer(IFruit fruit)
+        private readonly List<IFruit> _fruits = new List<IFruit>();
+        
+        public void Enregistrer(IEnumerable< IFruit> fruits)
         {
-            _fruits.Add(fruit);
+            _fruits.AddRange(fruits);
         }
 
         public int GetPrix()

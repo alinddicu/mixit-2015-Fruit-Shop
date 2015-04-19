@@ -63,5 +63,26 @@
 
             Check.That(caisse.GetPrix()).IsEqualTo(610);
         }
+
+        [TestMethod]
+        /*         
+         * Les articles doivent être séparés par des virgules 
+         * Même prix & réductions que pour l’itération
+         * 
+         * > Pommes, Cerises, Bananes 
+         * -> 325 
+         * > Pommes 
+         * -> 425
+         * 
+         */
+        public void GivenIteration3WhenGetPrixThenReturn425()
+        {
+            var caisse = new Caisse();
+
+            caisse.Enregistrer(Fruitfactory.Create("Pommes, Cerises, Bananes"));
+            caisse.Enregistrer(Fruitfactory.Create("Pommes"));
+
+            Check.That(caisse.GetPrix()).IsEqualTo(425);
+        }
     }
 }
