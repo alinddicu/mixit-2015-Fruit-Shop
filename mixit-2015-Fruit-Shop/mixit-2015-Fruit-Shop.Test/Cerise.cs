@@ -7,16 +7,12 @@
     {
         private const int PrixUnitaire = 75;
         private const int MontantReductionPar2 = 20;
-
-        public int GetPrixUnitaire()
-        {
-            return PrixUnitaire;
-        }
-
+        
         public static int CalculatePrixPanier(ICollection<IFruit> fruits)
         {
-            var prixNonReduit = fruits.OfType<Cerise>().Sum(f => f.GetPrixUnitaire());
-            var reductionPar2 = fruits.Count(f => f is Cerise) / 2 * MontantReductionPar2;
+            var ceriseNumber = fruits.Count(f => f is Cerise);
+            var prixNonReduit = ceriseNumber * PrixUnitaire;
+            var reductionPar2 = ceriseNumber / 2 * MontantReductionPar2;
 
             return prixNonReduit - reductionPar2;
         }

@@ -2,6 +2,5 @@
 {
     public interface IFruit
     {
-        int GetPrixUnitaire();
     }
 }

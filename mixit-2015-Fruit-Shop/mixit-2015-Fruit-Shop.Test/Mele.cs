@@ -7,12 +7,7 @@
     {
         private const int PrixUnitaire = Pomme.PrixUnitaire;
         private const int PrixPar2 = 150;
-
-        public int GetPrixUnitaire()
-        {
-            return PrixUnitaire;
-        }
-
+        
         public static int CalculatePrixPanier(IEnumerable<IFruit> fruits)
         {
             var nbApples = fruits.Count(f => f is Mele);

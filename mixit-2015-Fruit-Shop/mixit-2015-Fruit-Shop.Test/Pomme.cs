@@ -7,14 +7,9 @@
     {
         public const int PrixUnitaire = 100;
 
-        public int GetPrixUnitaire()
-        {
-            return PrixUnitaire;
-        }
-
         public static int CalculatePrixPanier(IEnumerable<IFruit> fruits)
         {
-            return fruits.OfType<Pomme>().Sum(f => f.GetPrixUnitaire());
+            return fruits.OfType<Pomme>().Sum(f => PrixUnitaire);
         }
     }
 }

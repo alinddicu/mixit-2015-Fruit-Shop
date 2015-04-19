@@ -7,15 +7,11 @@
     {
         private const int PrixUnitaire = 150;
 
-        public int GetPrixUnitaire()
+        public static int CalculatePrixPanier(IEnumerable<IFruit> fruits)
         {
-            return PrixUnitaire;
-        }
-
-        public static int CalculatePrixPanier(ICollection<IFruit> fruits)
-        {
-            var prixEntier = fruits.OfType<Banane>().Sum(f => f.GetPrixUnitaire());
-            var reduction = fruits.Count(f => f is Banane) / 2 * PrixUnitaire;
+            var bananeNumber = fruits.Count(f => f is Banane);
+            var prixEntier = bananeNumber * PrixUnitaire;
+            var reduction =  bananeNumber/ 2 * PrixUnitaire;
 
             return prixEntier - reduction;
         }
