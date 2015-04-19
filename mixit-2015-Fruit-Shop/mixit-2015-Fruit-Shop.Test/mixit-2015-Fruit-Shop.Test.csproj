@@ -50,7 +50,13 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="Banane.cs" />
+    <Compile Include="Caisse.cs" />
+    <Compile Include="Cerise.cs" />
+    <Compile Include="FruitFactory.cs" />
     <Compile Include="FruitShopTests.cs" />
+    <Compile Include="IFruit.cs" />
+    <Compile Include="Pomme.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Choose>

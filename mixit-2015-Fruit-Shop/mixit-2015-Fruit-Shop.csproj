@@ -8,7 +8,7 @@
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Mixit2015FruitShop</RootNamespace>
-    <AssemblyName>mixit-2015-Fruit-Shop</AssemblyName>
+    <AssemblyName>Mixit2015FruitShop</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -46,6 +46,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="mixit-2015-Fruit-Shop.Test\mixit-2015-Fruit-Shop.Test.csproj">
+      <Project>{cf16fd8e-7e68-4c89-940b-7c70740af3ad}</Project>
+      <Name>mixit-2015-Fruit-Shop.Test</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
