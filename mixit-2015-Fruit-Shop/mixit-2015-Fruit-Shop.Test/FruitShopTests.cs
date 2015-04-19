@@ -10,7 +10,7 @@
 
         [TestMethod]
         [Ignore]
-        /*         * 
+        /* 
          * > Cerises -> 75 
          * > Pommes -> 175 
          * > Cerises -> 250 
@@ -123,6 +123,7 @@
         }
 
         [TestMethod]
+        [Ignore]
         /*         
          * Support de la localisation 
          * La réduction pour les cerises repassent à 0,20 € 
@@ -199,6 +200,7 @@
         }
 
         [TestMethod]
+        [Ignore]
         /*         
          * On a déployé du nouveau Hardware, faut redeployer asap. 
          * Même deadline 
@@ -228,6 +230,38 @@
                 "Mele, Apples, Apples, Pommes, Apples, Mele, Cerises, Cerises, Bananes"));
             
             Check.That(caisse.GetPrix()).IsEqualTo(680);
+        }
+
+        [TestMethod]
+        /*
+         * Créer les super réductions 
+         * Support du CSV ET d’une entrée par ligne 
+         * 
+         * 4 pommes achetées, 1 € de réduction 
+         * 5 fruits achetés, 2 € de réduction 
+         * 
+         * Tests Vérifications 
+         * 
+         * > Mele, Apples, Apples, Mele 
+         * -> 200 
+         * > Bananes 
+         * -> 150 
+         * > Mele, Apples, Apples, Pommes, Mele 
+         * -> 150 
+         *          
+         * > Mele, Apples, Apples, Pommes, Mele 
+         * -> 100 
+         * > Bananes 
+         * -> 250
+         */
+        public void GivenIteration7WhenGetPrixThenReturn250()
+        {
+            var caisse = new Caisse();
+
+            caisse.Enregistrer(Fruitfactory.Create("Mele, Apples, Apples, Pommes, Mele"));
+            caisse.Enregistrer(Fruitfactory.Create("Bananes"));
+
+            Check.That(caisse.GetPrix()).IsEqualTo(250);
         }
     }
 }

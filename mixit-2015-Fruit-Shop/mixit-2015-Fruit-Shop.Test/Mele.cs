@@ -3,12 +3,12 @@
     using System.Collections.Generic;
     using System.Linq;
 
-    public class Mele : IFruit
+    public class Mele : PommeVariant
     {
         private const int PrixUnitaire = Pomme.PrixUnitaire;
         private const int PrixPar2 = 100;
-        
-        public static int CalculatePrixPanier(IEnumerable<IFruit> fruits)
+
+        public static int CalculatePrixPanier(IEnumerable<Fruit> fruits)
         {
             var nbMele = fruits.Count(f => f is Mele);
             var prixPar1 = (nbMele % 2) * PrixUnitaire;

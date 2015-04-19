@@ -5,7 +5,7 @@
 
     public class FruitFactory
     {
-        public IEnumerable<IFruit> Create(string input)
+        public IEnumerable<Fruit> Create(string input)
         {
             var fruits = input.Split(',');
             foreach (var fruit in fruits)
@@ -28,7 +28,7 @@
                         yield return new Banane();
                         break;
                     default:
-                        throw new InvalidDataException("Fruit non connu" + input);
+                        throw new InvalidDataException("Fruit inconnu : " + input);
                 }
             }
         }

@@ -56,9 +56,10 @@
     <Compile Include="Cerise.cs" />
     <Compile Include="FruitFactory.cs" />
     <Compile Include="FruitShopTests.cs" />
-    <Compile Include="IFruit.cs" />
+    <Compile Include="Fruit.cs" />
     <Compile Include="Mele.cs" />
     <Compile Include="Pomme.cs" />
+    <Compile Include="PommeVariant.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Choose>

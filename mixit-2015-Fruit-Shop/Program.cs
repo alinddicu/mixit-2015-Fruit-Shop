@@ -1,6 +1,7 @@
 ﻿namespace Mixit2015FruitShop
 {
     using System;
+    using System.IO;
     using Test;
 
     /**
@@ -8,17 +9,25 @@
      */
     public static class Program
     {
-        public static void Main(string[] args)
+        public static void Main()
         {
             var caisse = new Caisse();
             var fruitfactory = new FruitFactory();
 
-            var input = Console.ReadLine();
-            while (input != "exit")
+            try
             {
-                caisse.Enregistrer(fruitfactory.Create(input));
-                Console.WriteLine("-> " + caisse.GetPrix());
-                input = Console.ReadLine();
+                var input = Console.ReadLine();
+                while (input != "exit")
+                {
+                    caisse.Enregistrer(fruitfactory.Create(input));
+                    Console.WriteLine("-> " + caisse.GetPrix());
+                    input = Console.ReadLine();
+                }
+            }
+            catch (InvalidDataException ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.ReadLine();
             }
         }
     }
