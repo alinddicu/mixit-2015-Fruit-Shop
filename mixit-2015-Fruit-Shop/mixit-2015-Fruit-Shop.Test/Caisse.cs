@@ -5,7 +5,7 @@
 
     public class Caisse
     {
-        private readonly IList<IFruit> _fruits = new List<IFruit>(); 
+        private readonly IList<IFruit> _fruits = new List<IFruit>();
 
         public void Enregistrer(IFruit fruit)
         {
@@ -14,7 +14,11 @@
 
         public int GetPrix()
         {
-            return _fruits.Sum(f => f.GetPrix());
+            var prixPommes = Pomme.CalculatePrixPanier(_fruits);
+            var prixCerises = Cerise.CalculatePrixPanier(_fruits);
+            var prixBananes = Banane.CalculatePrixPanier(_fruits);
+
+            return prixPommes + prixCerises + prixBananes;
         }
     }
 }
