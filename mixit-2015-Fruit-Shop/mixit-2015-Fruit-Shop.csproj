@@ -7,7 +7,7 @@
     <ProjectGuid>{118030E9-2677-4C9C-8465-C0BBD81AFA80}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>mixit_2015_Fruit_Shop</RootNamespace>
+    <RootNamespace>Mixit2015FruitShop</RootNamespace>
     <AssemblyName>mixit-2015-Fruit-Shop</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
