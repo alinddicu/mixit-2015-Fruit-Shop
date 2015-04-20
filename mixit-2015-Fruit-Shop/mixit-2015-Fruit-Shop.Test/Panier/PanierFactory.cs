@@ -1,7 +1,6 @@
 ﻿namespace Mixit2015FruitShop.Test.Panier
 {
     using System.Collections.Generic;
-    using System.Linq;
     using Fruits;
 
     public class PanierFactory
@@ -9,15 +8,15 @@
         public IEnumerable<PanierBase> Create(ICollection<IFruit> fruits)
         {
             var applesPanier = new ApplesPanier();
-            applesPanier.Add(fruits.OfType<Apples>());
+            applesPanier.Add<Apples>(fruits);
             var bananePanier = new BananePanier();
-            bananePanier.Add(fruits.OfType<Banane>());
+            bananePanier.Add<Banane>(fruits);
             var cerisePanier = new CerisePanier();
-            cerisePanier.Add(fruits.OfType<Cerise>());
+            cerisePanier.Add<Cerise>(fruits);
             var melePanier = new MelePanier();
-            melePanier.Add(fruits.OfType<Mele>());
+            melePanier.Add<Mele>(fruits);
             var pommePanier = new PommePanier();
-            pommePanier.Add(fruits.OfType<Pomme>());
+            pommePanier.Add<Pomme>(fruits);
             
             yield return applesPanier;
             yield return bananePanier;

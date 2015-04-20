@@ -14,10 +14,11 @@
         }
 
         protected List<IFruit> Fruits { get; private set; }
-
-        public void Add(IEnumerable<IFruit> fruits)
+        
+        public void Add<TFruit>(IEnumerable<IFruit> fruits)
+            where TFruit : IFruit
         {
-            Fruits.AddRange(fruits);
+            Fruits.AddRange(fruits.OfType<TFruit>().Cast<IFruit>());
         }
 
         public virtual int GetPrix()
