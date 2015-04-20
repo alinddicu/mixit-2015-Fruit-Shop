@@ -5,8 +5,8 @@
     public class Caisse
     {
         private readonly List<Fruit> _fruits = new List<Fruit>();
-        
-        public void Enregistrer(IEnumerable< Fruit> fruits)
+
+        public void Enregistrer(IEnumerable<Fruit> fruits)
         {
             _fruits.AddRange(fruits);
         }

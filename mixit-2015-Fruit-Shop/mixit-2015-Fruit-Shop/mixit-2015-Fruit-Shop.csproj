@@ -48,7 +48,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="mixit-2015-Fruit-Shop.Test\mixit-2015-Fruit-Shop.Test.csproj">
+    <ProjectReference Include="..\mixit-2015-Fruit-Shop.Test\mixit-2015-Fruit-Shop.Test.csproj">
       <Project>{cf16fd8e-7e68-4c89-940b-7c70740af3ad}</Project>
       <Name>mixit-2015-Fruit-Shop.Test</Name>
     </ProjectReference>
