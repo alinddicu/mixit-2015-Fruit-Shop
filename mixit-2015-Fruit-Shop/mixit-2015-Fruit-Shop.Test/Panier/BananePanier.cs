@@ -1,6 +1,5 @@
 ﻿namespace Mixit2015FruitShop.Test.Panier
 {
-    using System.Collections.Generic;
     using Fruits;
 
     public class BananePanier : PanierBase

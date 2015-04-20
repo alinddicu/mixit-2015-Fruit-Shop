@@ -18,13 +18,6 @@
         {
             var paniers = new PanierFactory().Create(_fruits);
             var prixEntier = paniers.Sum(p => p.GetPrix());
-            //var prixPommes = Pomme.CalculatePrixPanier(_fruits);
-            //var prixApples = Apples.CalculatePrixPanier(_fruits);
-            //var prixMele = Mele.CalculatePrixPanier(_fruits);
-            //var prixCerises = Cerise.CalculatePrixPanier(_fruits);
-            //var prixBananes = Banane.CalculatePrixPanier(_fruits);
-
-            //var prixEntier = prixPommes + prixApples + prixMele + prixCerises + prixBananes;
 
             var reduction4Pommes = PommeBase.CalculateReduction4Pommes(_fruits);
             var reduction5Fruits = PanierBase.CalculateReduction5Fruits(_fruits);

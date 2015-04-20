@@ -1,7 +1,6 @@
 ﻿namespace Mixit2015FruitShop.Test.Panier
 {
     using Fruits;
-    using System.Collections.Generic;
 
     public class ApplesPanier : PanierBase
     {
