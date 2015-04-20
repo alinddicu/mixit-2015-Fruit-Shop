@@ -1,11 +1,11 @@
-﻿namespace Mixit2015FruitShop.Test
+﻿namespace Mixit2015FruitShop.Test.Fruits
 {
     using System.Collections.Generic;
     using System.IO;
 
     public class FruitFactory
     {
-        public IEnumerable<Fruit> Create(string input)
+        public IEnumerable<IFruit> Create(string input)
         {
             var fruits = input.Split(',');
             foreach (var fruit in fruits)

@@ -1,5 +1,6 @@
 ﻿namespace Mixit2015FruitShop.Test
 {
+    using Fruits;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using NFluent;
 

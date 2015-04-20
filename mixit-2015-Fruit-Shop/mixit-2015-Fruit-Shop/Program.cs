@@ -3,6 +3,7 @@
     using System;
     using System.IO;
     using Test;
+    using Test.Fruits;
 
     /**
      * http://fr.slideshare.net/brunoboucard/fruit-shop-techdays-2015 

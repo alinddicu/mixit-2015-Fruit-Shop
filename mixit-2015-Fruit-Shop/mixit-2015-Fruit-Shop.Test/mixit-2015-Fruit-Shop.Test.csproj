@@ -50,16 +50,23 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="Apples.cs" />
-    <Compile Include="Banane.cs" />
+    <Compile Include="Fruits\Apples.cs" />
+    <Compile Include="Fruits\Banane.cs" />
     <Compile Include="Caisse.cs" />
-    <Compile Include="Cerise.cs" />
-    <Compile Include="FruitFactory.cs" />
+    <Compile Include="Fruits\Cerise.cs" />
+    <Compile Include="Fruits\FruitFactory.cs" />
     <Compile Include="FruitShopTests.cs" />
-    <Compile Include="Fruit.cs" />
-    <Compile Include="Mele.cs" />
-    <Compile Include="Pomme.cs" />
-    <Compile Include="PommeVariant.cs" />
+    <Compile Include="Fruits\IFruit.cs" />
+    <Compile Include="Panier\ApplesPanier.cs" />
+    <Compile Include="Panier\BananePanier.cs" />
+    <Compile Include="Panier\CerisePanier.cs" />
+    <Compile Include="Panier\MelePanier.cs" />
+    <Compile Include="Panier\PanierBase.cs" />
+    <Compile Include="Fruits\Mele.cs" />
+    <Compile Include="Panier\PanierFactory.cs" />
+    <Compile Include="Fruits\Pomme.cs" />
+    <Compile Include="Fruits\PommeBase.cs" />
+    <Compile Include="Panier\PommePanier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Choose>
