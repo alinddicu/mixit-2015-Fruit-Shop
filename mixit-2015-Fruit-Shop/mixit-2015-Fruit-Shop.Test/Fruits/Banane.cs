@@ -2,11 +2,11 @@
 {
     public class Banane : IFruit
     {
-        public const int PrixU = 150;
+        public const int PrixPerUnit = 150;
         
         public int PrixUnitaire
         {
-            get { return PrixU; }
+            get { return PrixPerUnit; }
         }
     }
 }

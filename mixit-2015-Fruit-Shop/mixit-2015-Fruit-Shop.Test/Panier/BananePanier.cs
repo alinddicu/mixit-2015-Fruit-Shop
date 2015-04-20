@@ -7,8 +7,8 @@
         public override int GetPrix()
         {
             var bananeNumber = Fruits.Count;
-            var prixEntier = bananeNumber * Banane.PrixU;
-            var reduction = bananeNumber / 2 * Banane.PrixU;
+            var prixEntier = bananeNumber * Banane.PrixPerUnit;
+            var reduction = bananeNumber / 2 * Banane.PrixPerUnit;
 
             return prixEntier - reduction;
         }

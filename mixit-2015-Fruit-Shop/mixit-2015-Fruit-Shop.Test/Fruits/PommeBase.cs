@@ -5,7 +5,7 @@
 
     public abstract class PommeBase : IFruit
     {
-        public const int PrixU = 100;
+        public const int PrixPerUnit = 100;
 
         private const int MontantReduction4Pommes = 100;
 

@@ -7,7 +7,7 @@
         public override int GetPrix()
         {
             var nbApples = Fruits.Count;
-            var prixPar1 = (nbApples % 3) * Apples.PrixU;
+            var prixPar1 = (nbApples % 3) * Apples.PrixPerUnit;
             var prixPar3 = nbApples / 3 * Apples.PrixPar3;
 
             return prixPar1 + prixPar3;

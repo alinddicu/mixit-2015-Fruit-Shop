@@ -6,7 +6,7 @@
         
         public override int PrixUnitaire
         {
-            get { return PrixU; }
+            get { return PrixPerUnit; }
         }
     }
 }

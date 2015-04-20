@@ -7,7 +7,7 @@
         public override int GetPrix()
         {
             var nbMele = Fruits.Count;
-            var prixPar1 = (nbMele % 2) * Mele.PrixU;
+            var prixPar1 = (nbMele % 2) * Mele.PrixPerUnit;
             var prixPar3 = nbMele / 2 * Mele.PrixPar2;
 
             return prixPar1 + prixPar3;
